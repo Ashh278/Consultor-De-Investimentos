@@ -25,6 +25,8 @@ perfil_risco([baixo, moderado, baixo], perfil_adequado).
 perfil_risco([baixo, alto, baixo], conservador_modificado).
 perfil_risco([alto, baixo, moderado], agressivo_modificado).
 perfil_risco([alto, moderado, alto], arrojado).
+perfil_risco([moderado, baixo, moderado], equilibrado).
+perfil_risco([moderado, alto, moderado], dinâmico).
 
 % estrategia_investimento(Perfil, Estrategia)
 estrategia_investimento(conservador, [poupanca, cdb, tesouro_direto]).
@@ -36,6 +38,9 @@ estrategia_investimento(perfil_adequado, [poupanca, tesouro_direto]).
 estrategia_investimento(conservador_modificado, [poupanca, renda_fixa, tesouro_direto]).
 estrategia_investimento(agressivo_modificado, [acoes, criptomoedas, fundos_de_acao, fundos_imobiliarios]).
 estrategia_investimento(arrojado, [acoes_tecnologia, acoes_dividendos, etfs]).
+estrategia_investimento(equilibrado, [cdb, fundos_credito, debentures]).
+estrategia_investimento(dinâmico, [acoes, etfs, fundos_de_acao]).
+
 
 % sugerir_investimentos(Respostas, Sugestao).
 sugerir_investimentos(Respostas, Sugestao) :-
